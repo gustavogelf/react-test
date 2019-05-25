@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production",
+    "start": "node index.js",
+    "build": "npm run build-js && npm run build-css",
+    "heroku-postbuild": "npm run build",
+    "build-js": "webpack --mode production",
     "build-css": "node-sass ./sass/main.scss ./dist/main.css"
   },
   "author": "",
@@ -26,5 +29,8 @@
     "babel-loader": "^8.0.6",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2"
+  },
+  "engine": {
+    "node": ">=8.9.1"
   }
 }
