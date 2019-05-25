@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+.album {
+  &-content {
+    top: 0px;
+    position: relative;
+    transition: 0.4s;
+    border: 2px solid lighten(black, 30%);
+    width: 50%;
+    margin: 2em 1em 0em 1em;
+    padding: 1em;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    
+    &:hover {
+      top: -10px;
+      box-shadow: 0 8px 8px 0 rgba(0,0,0,.14), 0 9px 7px -5px rgba(0,0,0,.2), 0 7px 9px 0 rgba(0,0,0,.12);
+    }
+  }
+
+  &-title {
+    font-size: 0.9em;
+  }
+
+  &-image {
+    width: 100%;
+  }
+
+  &-container {
+    display: inline-flex;
+    flex-direction: row;
+    
+    &:nth-child(1) .album-content {
+      border-color: lighten(green, 30%);
+    }    
+    &:nth-child(2) .album-content{
+      border-color: lighten(blue, 30%);
+    }    
+    &:nth-child(3) .album-content{
+      border-color: lighten(purple, 30%);
+    }
+  }
+
+  &-wrapper {
+    margin-bottom: 2em;
+    display: inline-flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+}
